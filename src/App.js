@@ -12,10 +12,6 @@ import Box from '@mui/material/Box';
 import axios from 'axios';
 import { useEffect , useState } from 'react';
 
-
-
-
-
 const theme = createTheme({
   palette: {
     primary: {
@@ -33,31 +29,30 @@ const theme = createTheme({
   },
 });
 
-let data =1;
 
 function App() {
+  let [city, setCity] = useState("Cairo")
+  let [WeatherData , SetWeatherData] = useState({})
 
-  let [AppData , SetAppData] = useState({})
+  const getWeather = () => {
+    axios.get(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=300a058b5f16359e5e6dc459301de0e0`)
+      .then((response) => {
+        SetWeatherData(response.data)
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }
 
   useEffect(() => {
+    getWeather()
+  }, [])
 
-    // Make a request for a user with a given ID
-    axios.get('https://api.openweathermap.org/data/2.5/weather?lat=30.06263&lon=31.24967&appid=300a058b5f16359e5e6dc459301de0e0')
-      .then(function (response) {
-        // handle success
-        data = response.data
-        SetAppData(data)
-        console.log(data.main);
-      })
-      .catch(function (error) {
-        // handle error
-        console.log(error);
-      })
-  },[])
+  let tepmr = Math.round(WeatherData.main?.temp-273) || "..";
+  let maxTemp = Math.round(WeatherData.main?.temp_max-273) || "..";
+  let minTemp = Math.round(WeatherData.main?.temp_min-273) || "..";
+  let sity = WeatherData.name || ".."
 
-  let tepmr = Math.round(AppData.main?.temp-273) || "..";
-  let maxTemp = Math.round(AppData.main?.temp_max-273) || "..";
-  let minTemp = Math.round(AppData.main?.temp_min-273) || "..";
 
 
   return (
@@ -72,7 +67,7 @@ function App() {
                   <Grid container spacing={2} alignItems="end">
                       <Grid item xs={8} >
                         <Typography  sx={{ fontSize: 60,fontFamily:"inherit" }}>
-                          القاهرة
+                          {sity}
                         </Typography>
                       </Grid>
                       <Grid item xs={4} >
@@ -102,8 +97,19 @@ function App() {
 
               </CardContent>
             </Card>
-            <CardActions >
-              <Button sx={{color: "white"}} size="small">text</Button>
+            <CardActions sx={{justifyContent:"center", gap:2}} >
+              <input 
+                value={city}
+                onChange={(e) => setCity(e.target.value)}
+                placeholder="اكتب اسم المدينة"
+                style={{padding:"10px", borderRadius:"8px", border:"none"}}
+              />
+              <Button 
+                onClick={getWeather} 
+                variant="contained"
+              >
+                بحث
+              </Button>
             </CardActions>
           </Container>
         </header>
