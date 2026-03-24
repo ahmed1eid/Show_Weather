@@ -1,70 +1,129 @@
-# Getting Started with Create React App
+# 🌤️ Weather App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A modern, responsive **Weather Forecast App** built with **React.js** and **Material UI**, supporting **English & Arabic**, dynamic weather updates, and beautiful UI.
 
-## Available Scripts
+**🌐 Live Demo:** [Click here to open Weather App](https://timely-kangaroo-75dcaa.netlify.app/)
 
-In the project directory, you can run:
+---
 
-### `npm start`
+## 🔥 Demo
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Search cities, switch languages, and see real-time weather updates with icons and temperature.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+---
 
-### `npm test`
+## 🚀 Features
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- ✅ **Real-time Weather Data** from OpenWeatherMap API  
+- ✅ **City Search**: Button click or Enter key  
+- ✅ **Multi-language Support**: English / Arabic (RTL layout support)  
+- ✅ **Responsive Design**: Works on mobile, tablet, and desktop  
+- ✅ **Weather Details**:
+  - Current temperature  
+  - Weather description  
+  - Min/Max temperatures  
+  - Weather icon  
+- ✅ **Local Storage**: Remembers last searched city  
+- ✅ **Dynamic Date & Time** based on locale
 
-### `npm run build`
+---
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## 🛠️ Tech Stack
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- **Frontend**: React.js, Material UI  
+- **State Management**: React Hooks (`useState`, `useEffect`)  
+- **API**: OpenWeatherMap  
+- **Localization**: react-i18next + moment.js  
+- **Styling**: Material UI Theme + CSS
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+---
 
-### `npm run eject`
+## 📦 Installation
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+1. **Clone the repository**
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+```bash
+git clone https://github.com/ahmed1eid/Show_Weather.git
+cd Show_Weather
+```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+2. **Install dependencies**
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+```bash
+npm install
+```
 
-## Learn More
+3. **Start the app**
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+```bash
+npm start
+```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+4. Open [http://localhost:3000](http://localhost:3000)
 
-### Code Splitting
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## ⚙️ Usage
 
-### Analyzing the Bundle Size
+1. Enter a **city** in the input field.  
+2. Press **Enter** or click **Search**.  
+3. Switch between **English** and **Arabic** using the language button.  
+4. View:
+   - City name  
+   - Current date & time  
+   - Temperature, min/max  
+   - Weather description  
+   - Weather icon
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+---
 
-### Making a Progressive Web App
+## 🌐 Screenshots
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+**Desktop View**  
+![Desktop](Screenshots/desktop.png)
 
-### Advanced Configuration
+**Mobile View**  
+![Mobile](Screenshots/mobile.png)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+---
 
-### Deployment
+## 🔑 API Key
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+Get your API key from [OpenWeatherMap](https://openweathermap.org/api) and replace it in `App.js`:
 
-### `npm run build` fails to minify
+```javascript
+axios.get(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=YOUR_API_KEY`)
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+---
+
+## 📝 File Structure
+
+```
+weather-app/
+├─ src/
+│  ├─ App.js
+│  ├─ App.css
+│  ├─ Components/
+│  │  └─ theme.js
+├─ public/
+│  └─ index.html
+├─ package.json
+└─ README.md
+```
+
+---
+
+## 💡 Future Improvements
+
+- Auto-refresh weather every few minutes  
+- Add 7-day forecast  
+- Add geolocation for current location weather  
+- Animated weather backgrounds based on conditions
+
+---
+
+## 📄 License
+
+This project is **MIT licensed**.
+
