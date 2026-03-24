@@ -80,10 +80,9 @@ npm start
 ## 🌐 Screenshots
 
 **Desktop View**  
-![Desktop](Screenshots/desktop.png)
+
 
 **Mobile View**  
-![Mobile](Screenshots/mobile.png)
 
 ---
 
