@@ -9,7 +9,9 @@ i18n.use(initReactI18next).init({
         temperature: "Temperature",
         min: "Min",
         max: "Max",
-        change_lang: "Arabic"
+        change_lang: "Arabic",
+        search: "search",
+        enter_city:"enter city",
       }
     },
     ar: {
@@ -18,7 +20,9 @@ i18n.use(initReactI18next).init({
         temperature: "الحرارة",
         min: "الصغرى",
         max: "الكبرى",
-        change_lang: "English"
+        change_lang: "English",
+        search: "بحث",
+        enter_city:"اسم المدينة",
       }
     }
   },
